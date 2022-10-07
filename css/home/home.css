@@ -84,6 +84,12 @@
 
 .info-wrapper {
   align-self: center;
+  line-height: 1rem;
+}
+
+.contact-info {
+  font-size: 10px;
+  line-height: 1rem;
 }
 
 @media (max-width: 540px) {
