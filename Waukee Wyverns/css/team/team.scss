@@ -1,0 +1,57 @@
+.underline{
+    position: absolute;
+    background: royalblue;
+    width: 44px;
+    height: 3px;
+    transform: translate(-95px, 10px);
+}
+.titles{
+    text-align: center;
+    margin-bottom: -0.1em;
+    color: royalblue;
+    font-size: 3em;
+}
+.member-card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .member-card{
+        background: white;
+        padding: 40px;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        margin: 20px;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+        border-radius: 0.4em;
+        width: 300px;
+        height: 490px;
+
+        .member-image{
+            height: 300px;
+            width: 300px;
+            border-radius: 0.4em;
+        }
+        .member-name{
+            color: royalblue;
+            font-size: 25px;
+        }
+    }
+}
+
+.member-list{
+    display: flex;
+    padding: 2em 3em;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    p{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+
