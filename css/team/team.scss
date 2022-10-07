@@ -43,7 +43,7 @@
 
 .member-list{
     display: flex;
-    padding: 2em 3em;
+    padding-block: 2em;
     gap: 2em;
     flex-wrap: wrap;
     justify-content: center;
@@ -51,6 +51,16 @@
     p{
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+@media (min-width: 400px) {
+    .member-list{
+        p{
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-inline: -0.5em;
+        }
     }
 }
 
