@@ -5,6 +5,7 @@ main{
     padding-block: 1rem;
 }
 iframe{
+    margin-block: 1rem;
     width: 100%;
     height: 600px;
 }
