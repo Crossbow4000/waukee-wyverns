@@ -1,0 +1,7 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+iframe{
+    margin-top: 1.4rem;
+}
