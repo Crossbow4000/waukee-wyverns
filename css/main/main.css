@@ -78,7 +78,7 @@ h1 {
     transform: translateX(100%);
     transition: 500ms ease-in-out;
   }
-  @supports (backdrop-filter: blur(0.2em);){
+  @supports (backdrop-filter: blur(0.2em)){
     .menu-bar .navigation {
       position: fixed;
       display: block;
