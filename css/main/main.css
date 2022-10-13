@@ -69,8 +69,7 @@ h1 {
     padding-right: 4em;
     margin: 0;
     background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: blur(0.2em);
+    backdrop-filter: blur(0.2em);
     height: 100vh;
     right: 0;
     top: 0;
