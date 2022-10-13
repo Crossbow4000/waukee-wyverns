@@ -69,9 +69,7 @@ h1 {
     padding-left: 2em;
     padding-right: 4em;
     margin: 0;
-    background: rgba(255, 255, 255, 0.6);
-    -webkit-backdrop-filter: blur(0.2em);
-            backdrop-filter: blur(0.2em);
+    background: rgb(255, 255, 255);
     height: 100vh;
     right: 0;
     top: 0;
@@ -80,15 +78,28 @@ h1 {
     transform: translateX(100%);
     transition: 500ms ease-in-out;
   }
+  @supports (backdrop-filter: blur(0.2em);){
+    .menu-bar .navigation {
+      position: fixed;
+      display: block;
+      padding-block: 4em;
+      padding-left: 2em;
+      padding-right: 4em;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(0.2em);
+      height: 100vh;
+      right: 0;
+      top: 0;
+      font-size: 1.5em;
+      z-index: 1;
+      transform: translateX(100%);
+      transition: 500ms ease-in-out;
+    }
+  }
   .menu-bar .nav-toggle[data-fixed=false] {
     display: block;
     z-index: 9999;
-    -webkit-animation-name: Go-Back;
-            animation-name: Go-Back;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
     position: absolute;
     right: 0;
     margin-inline: 20px;
