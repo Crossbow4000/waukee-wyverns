@@ -1,0 +1,11 @@
+main{
+    display: flex;
+    justify-content: center;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    height: 2700px;
+}
+iframe{
+    margin-block: 1rem;
+    width: 100%;
+}
