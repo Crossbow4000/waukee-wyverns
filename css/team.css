@@ -61,9 +61,7 @@ justify-content: center;
 .member-list p {
 margin-top: 0;
 margin-bottom: 0;
-}
-
-@media (min-width: 400px) {
+@media (max-width: 540px) {
     .member-list p {
       margin-top: 0;
       margin-bottom: 0;
