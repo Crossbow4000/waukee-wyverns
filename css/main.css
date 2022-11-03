@@ -70,6 +70,7 @@ svg rect{
 svg:hover rect{
     transition: 100ms ease-in-out;
     height: 13px;
+    rx: 6.5px;
 }
 @media (max-width: 48rem) {
   .menu-bar .navigation {
