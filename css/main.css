@@ -69,6 +69,7 @@ svg rect{
 }
 svg:hover rect{
     transition: 100ms ease-in-out;
+    transform: translateY(-1.5px);
     height: 13px;
     rx: 6.5px;
 }
