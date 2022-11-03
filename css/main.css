@@ -51,6 +51,8 @@ h1 {
   display: none;
 }
 svg rect{
+    transform-box: fill-box;
+    transform-origin: center;
     transition: 100ms ease-in-out;
 }
 .menu-divider {
@@ -67,7 +69,7 @@ svg rect{
 }
 svg:hover rect{
     transition: 100ms ease-in-out;
-    height: 11.4px;
+    height: 13px;
 }
 @media (max-width: 48rem) {
   .menu-bar .navigation {
@@ -100,6 +102,21 @@ svg:hover rect{
     position: fixed;
     right: 0;
     margin-inline: 20px;
+  }
+  .nav-toggle[data-fixed=true] .rect-1{
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: translateY(30px) rotate(45deg);
+  }
+  .nav-toggle[data-fixed=true] .rect-2{
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: rotate(-45deg);
+  }
+  .nav-toggle[data-fixed=true] .rect-3{
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: translateY(-30px) rotate(45deg);
   }
   .menu-bar .nav-toggle:hover {
     cursor: pointer;
