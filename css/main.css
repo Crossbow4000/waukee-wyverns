@@ -1,6 +1,10 @@
 html {
   scroll-behavior: smooth;
 }
+.body[data-noscroll=true]{
+    position: fixed;
+    overflow-y: scroll;
+}
 
 * {
   text-decoration: none;
@@ -104,6 +108,7 @@ svg:hover rect{
     position: fixed;
     right: 0;
     margin-inline: 20px;
+    overflow-y: scroll;
   }
   .nav-toggle[data-fixed=true] .rect-1{
     transform-box: fill-box;
