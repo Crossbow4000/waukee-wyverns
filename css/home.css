@@ -17,6 +17,8 @@
 }
 
 .upcoming-events {
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 0.4em;
   margin-left: -8px;
   margin-right: -8px;
   background: royalblue;
