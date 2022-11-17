@@ -84,9 +84,9 @@ svg:hover rect{
     display: block;
     padding-block: 4em;
     padding-left: 2em;
-    padding-right: 4em;
+    padding-right: 30%;
     margin: 0;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(0.2em);
     height: 100vh;
     right: 0;
