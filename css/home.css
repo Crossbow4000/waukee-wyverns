@@ -50,6 +50,7 @@
   border-radius: 0.4em;
   max-width: 400px;
   transition: 200ms ease-in-out;
+  min-width: 280px;
 }
 .event-card:hover {
     padding: 41px;

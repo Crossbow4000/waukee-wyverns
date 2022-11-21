@@ -1,4 +1,4 @@
-const api_url = 'https://api.sheety.co/5ee27d6536c5a1b1bac026b071e23292/apiStuff/sheet1';
+const api_url = 'https://script.googleusercontent.com/macros/echo?user_content_key=9V-OFj2X2CRvVvATOQtNGA30cdq1gNCQjoFLhiGShnpWVyjPjyrIWL1I7rky8Rr1EA-49Arq7jKXf1r0I6D_nGKyZDJFs6KFm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnE8qm7V8vc929nhfcFmD82PVgYDImS4sXuX2jZGcJCX0S4hnj_u8iZ3FrXPHF_MzvK8kNYcMftVfHG6n3Ysp38UJpe0J070fvw&lib=MN6OZnxKwUW0oF-2LQ9t5J1IOmpMGpgTG';
 
 /////////////////////////////////////////////////
 
@@ -45,15 +45,14 @@ fetch(api_url)
   .then((response) => response.json())
   .then(json => {
     for (let i = 0; i <= 4; i++) {
-        if (json.sheet1[i].practice != false) {
-
+        if (json[i].Practice != false) {
             CreateEvents()
 
             node = document.createTextNode("Type")
             type_title.appendChild(node)
             card.appendChild(type_title)
 
-            node = document.createTextNode("Practice (" + json.sheet1[i].practice + ")")
+            node = document.createTextNode("Practice (" + json[i].Practice + ")")
             type.appendChild(node)
             card.appendChild(type)
 
@@ -61,7 +60,7 @@ fetch(api_url)
             day_title.appendChild(node)
             card.appendChild(day_title)
 
-            node = document.createTextNode(json.sheet1[i].day)
+            node = document.createTextNode(json[i].Day)
             day.appendChild(node)
             card.appendChild(day)
 
@@ -69,7 +68,7 @@ fetch(api_url)
             time_title.appendChild(node)
             card.appendChild(time_title)
 
-            node = document.createTextNode(json.sheet1[i].practiceTime)
+            node = document.createTextNode(json[i].PTime)
             time.appendChild(node)
             card.appendChild(time)
 
@@ -77,14 +76,14 @@ fetch(api_url)
             location_title.appendChild(node)
             card.appendChild(location_title)
 
-            node = document.createTextNode(json.sheet1[i].practiceLocation)
+            node = document.createTextNode(json[i].PLocation)
             place.appendChild(node)
             card.appendChild(place)
 
             events_section.appendChild(card)
             DestroyEvents()
 
-        } else if (json.sheet1[i].match != false) {
+        } else if (json[i].Match != false) {
 
             CreateEvents()
 
@@ -92,7 +91,7 @@ fetch(api_url)
             type_title.appendChild(node)
             card.appendChild(type_title)
 
-            node = document.createTextNode("Match (" + json.sheet1[i].match + ")")
+            node = document.createTextNode("Match (" + json[i].Match + ")")
             type.appendChild(node)
             card.appendChild(type)
 
@@ -100,7 +99,7 @@ fetch(api_url)
             day_title.appendChild(node)
             card.appendChild(day_title)
 
-            node = document.createTextNode(json.sheet1[i].day)
+            node = document.createTextNode(json[i].Day)
             day.appendChild(node)
             card.appendChild(day)
 
@@ -108,7 +107,7 @@ fetch(api_url)
             time_title.appendChild(node)
             card.appendChild(time_title)
 
-            node = document.createTextNode(json.sheet1[i].matchTime)
+            node = document.createTextNode(json[i].MTime)
             time.appendChild(node)
             card.appendChild(time)
 
@@ -116,7 +115,7 @@ fetch(api_url)
             location_title.appendChild(node)
             card.appendChild(location_title)
 
-            node = document.createTextNode(json.sheet1[i].matchLocation)
+            node = document.createTextNode(json[i].MLocation)
             place.appendChild(node)
             card.appendChild(place)
 
