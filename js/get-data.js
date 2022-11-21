@@ -19,7 +19,7 @@ function CreateEvents() {
   time_title = document.createElement("p")
   time_title.classList.add("card-title");
   time = document.createElement("p");
-  time.classList.add("event-description");
+  time.classList.add("event-text");
   location_title = document.createElement("p");
   location_title.classList.add("card-title");
   place = document.createElement("h1");
@@ -53,7 +53,7 @@ fetch(api_url)
             type_title.appendChild(node)
             card.appendChild(type_title)
 
-            node = document.createTextNode("Practice")
+            node = document.createTextNode("Practice (" + json.sheet1[i].practice + ")")
             type.appendChild(node)
             card.appendChild(type)
 
@@ -92,7 +92,7 @@ fetch(api_url)
             type_title.appendChild(node)
             card.appendChild(type_title)
 
-            node = document.createTextNode("Practice")
+            node = document.createTextNode("Match (" + json.sheet1[i].match + ")")
             type.appendChild(node)
             card.appendChild(type)
 
