@@ -58,7 +58,7 @@ h1 {
 svg rect{
     transform-box: fill-box;
     transform-origin: center;
-    transition: 350ms ease-in-out;
+    transition: 100ms ease-in-out;
 }
 .menu-divider {
   position: absolute;
@@ -73,7 +73,7 @@ svg rect{
     font-weight: 1000;
 }
 svg:hover rect{
-    transition: 350ms ease-in-out;
+    transition: 100ms ease-in-out;
     transform: translateY(-1.5px);
     height: 13px;
     rx: 6.5px;
@@ -94,7 +94,7 @@ svg:hover rect{
     font-size: 1.5em;
     z-index: 1;
     transform: translateX(100%);
-    transition: 350ms ease-in-out;
+    transition: 400ms ease-in-out;
   }
   .menu-bar .nav-toggle[data-fixed=false] {
     display: flex;
