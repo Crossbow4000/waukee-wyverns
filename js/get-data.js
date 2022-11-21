@@ -4,6 +4,8 @@ const api_url = 'https://script.googleusercontent.com/macros/echo?user_content_k
 
 let node
 
+let foundEvent = false;
+
 function CreateEvents() {
   events_section = document.getElementById("events");
   card = document.createElement("div");
@@ -46,6 +48,7 @@ fetch(api_url)
   .then(json => {
     for (let i = 0; i <= 4; i++) {
         if (json[i].Practice != false) {
+            foundEvent = true;
             CreateEvents()
 
             node = document.createTextNode("Type")
@@ -84,7 +87,7 @@ fetch(api_url)
             DestroyEvents()
 
         } else if (json[i].Match != false) {
-
+            foundEvent = true;
             CreateEvents()
 
             node = document.createTextNode("Type")
@@ -123,5 +126,10 @@ fetch(api_url)
             DestroyEvents()
 
         }
+    }
+    if (foundEvent == false) {
+        CreateEvents()
+
+        DestroyEvents()
     }
   });

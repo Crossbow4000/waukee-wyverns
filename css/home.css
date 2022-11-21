@@ -96,6 +96,19 @@
 }
 
 @media (max-width: 540px) {
+  .event-card {
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 20px;
+  }
+  .event-card:hover {
+    padding: 21px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin: 19px;
+  }
+
   .about-us {
     margin-left: -8;
     margin-right: -8;
