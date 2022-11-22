@@ -6,8 +6,7 @@ elements = document.getElementsByClassName("dark-toggle");
 navigation = document.getElementsByClassName("navigation")[0];
 
 
-if ( localStorage.getItem("mode") != "light" || localStorage.getItem("mode") != "dark" ) {
-  alert(localStorage.getItem("mode"))
+if ( localStorage.getItem("mode") != "light" && localStorage.getItem("mode") != "dark" ) {
   localStorage.setItem("mode", "light")
 }
 
