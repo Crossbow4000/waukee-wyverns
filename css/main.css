@@ -31,6 +31,11 @@ h1 {
     cursor: pointer;
 }
 
+.dark-toggle {
+    transition: 200ms ease-in-out;
+}
+
+
 .moon {
     height: 30px;
     grid-column: 1;
