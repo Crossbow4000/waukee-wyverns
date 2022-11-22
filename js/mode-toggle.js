@@ -6,12 +6,12 @@ elements = document.getElementsByClassName("dark-toggle");
 navigation = document.getElementsByClassName("navigation")[0];
 
 
-if ( sessionStorage.getItem("mode") != "light" || sessionStorage.getItem("mode") != "dark" ) {
-  sessionStorage.setItem("mode", "light")
+if ( localStorage.getItem("mode") != "light" || localStorage.getItem("mode") != "dark" ) {
+  localStorage.setItem("mode", "dark")
 }
 
 
-if ( sessionStorage.getItem("mode") == "light")  {
+if ( localStorage.getItem("mode") == "light")  {
   active = darkToggle;
   notActive = lightToggle;
 
@@ -46,11 +46,11 @@ notActive.style.opacity = "0"
 
 
 function Toggle() {
-  if ( sessionStorage.getItem("mode") == "light")  {
+  if ( localStorage.getItem("mode") == "light")  {
     active = darkToggle;
     notActive = lightToggle;
 
-    sessionStorage.setItem("mode", "dark")
+    localStorage.setItem("mode", "dark")
 
     for ( let i in elements ) {
       try {
@@ -64,7 +64,7 @@ function Toggle() {
     active = lightToggle;
     notActive = darkToggle;
 
-    sessionStorage.setItem("mode", "light")
+    localStorage.setItem("mode", "light")
 
     for ( let i in elements ) {
       try {
