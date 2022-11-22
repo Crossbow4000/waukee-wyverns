@@ -12,12 +12,16 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/join.css">
     </head>
-    <body>
+    <body class="dark-toggle">
         <nav class="menu-bar">
             <div class="logo">
                 <a href="#" class="logo-waukee">Waukee<span class="logo-wyverns">ESPORTS</span></a>
             </div>
             <div data-visible="false" class="navigation">
+                <div class="mode-toggle">
+                    <img src="images/moon.svg" class="moon" id="moon">
+                    <img src="images/sun.svg" class="sun" id="sun">
+                </div>
                 <p><a href="home.html">Home</a></p>
                 <p><a href="team.html">Team</a></p>
                 <p><a href="schedule.html">Schedule</a></p>
@@ -34,5 +38,6 @@
             <iframe src="https://docs.google.com/forms/d/1-oR5opQMoGm6hYVBnMCQQmdvHh1lA0RSZ19NoTwpck0/viewform?embedded=true" width="100%" height="2700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </main>   
         <script src="js/main.js" async defer></script>
+        <script src="js/mode-toggle.js" async defer></script>
     </body>
 </html>

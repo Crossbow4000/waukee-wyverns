@@ -1,3 +1,8 @@
+:root {
+    --color = 255
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,6 +24,23 @@ h1 {
 
 .selected {
   color: royalblue;
+}
+
+.mode-toggle {
+    display: grid;
+}
+
+.moon {
+    height: 30px;
+    grid-column: 1;
+    grid-row: 1;
+    transition: 100ms linear;
+}
+.sun {
+    height: 30px;
+    grid-column: 1;
+    grid-row: 1;
+    transition: 100ms linear;
 }
 
 .menu-bar {
@@ -47,6 +69,7 @@ h1 {
   align-items: center;
   font-size: 1em;
   margin-block: -10%;
+  background: rgba(255, 255, 255, 0.9)
 }
 .menu-bar svg {
   fill: royalblue;
@@ -86,7 +109,6 @@ svg:hover rect{
     padding-left: 2em;
     padding-right: 30%;
     margin: 0;
-    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(0.2em);
     height: 100vh;
     right: 0;

@@ -114,10 +114,8 @@
   }
 
   .about-us {
-    margin-left: -8;
-    margin-right: -8;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-inline: -8;
+    padding-inline: 30px;
     padding-top: 40px;
     padding-bottom: 60px;
     background: white;

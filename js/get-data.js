@@ -10,6 +10,7 @@ function CreateEvents() {
   events_section = document.getElementById("events");
   card = document.createElement("div");
   card.classList.add("event-card");
+  card.classList.add("dark-toggle");
   type_title = document.createElement("p");
   type_title.classList.add("card-title");
   type = document.createElement("h1");

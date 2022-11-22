@@ -11,12 +11,16 @@
         <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/schedule.css"/>
     </head>
-    <body>
+    <body class="dark-toggle">
         <nav class="menu-bar">
             <div class="logo">
                 <a href="#" class="logo-waukee">Waukee<span class="logo-wyverns">ESPORTS</span></a>
             </div>
             <div data-visible="false" class="navigation">
+                <div class="mode-toggle">
+                    <img src="images/moon.svg" class="moon" id="moon">
+                    <img src="images/sun.svg" class="sun" id="sun">
+                </div>
                 <p><a href="home.html">Home</a></p>
                 <p><a href="team.html">Team</a></p>
                 <p><a href="#" class="selected">Schedule</a></p>
@@ -33,5 +37,6 @@
             <iframe src="https://calendar.google.com/calendar/embed?src=c_e34995e7bd731af18c6f63be418dae279d21228e9bf54decb5544de663aea527%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </section>
         <script src="js/main.js" async defer></script>
+        <script src="js/mode-toggle.js" async defer></script>
     </body>
 </html>
