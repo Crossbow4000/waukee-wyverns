@@ -87,7 +87,8 @@ fetch(api_url)
             events_section.appendChild(card)
             DestroyEvents()
 
-        } else if (json[i].Match != false) {
+        }
+        if (json[i].Match != false) {
             foundEvent = true;
             CreateEvents()
 
