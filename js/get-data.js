@@ -144,6 +144,6 @@ fetch(api_url)
         DestroyEvents()
     }
     Toggle()
-    Toggle();;
+    Toggle()
   });
 

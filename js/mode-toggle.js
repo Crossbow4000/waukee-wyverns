@@ -26,8 +26,12 @@ if ( localStorage.getItem("mode") == "dark")  {
       }
     }
     navigation.style.background = "rgba(255, 255, 255, 0.9)"
-    eventsTitle.style.color = "white"
-    eventsTitle.style.background = "none"
+    try {
+        eventsTitle.style.color = "rgb(255, 255, 255)"
+        eventsTitle.style.background = "none"
+    } catch {
+        let o = "o"
+    }
     } else {
     active = darkToggle;
     notActive = lightToggle;
@@ -42,8 +46,13 @@ if ( localStorage.getItem("mode") == "dark")  {
       }
     }
     navigation.style.background = "rgba(30, 30, 30, 0.9)"
-    eventsTitle.style.color = "rgb(30, 30, 30)"
-    eventsTitle.style.background = "none"
+    try {
+        eventsTitle.style.color = "rgb(30, 30, 30)"
+        eventsTitle.style.background = "none"
+    } catch {
+        let o = "o"
+    }
+
 }
 
 
@@ -68,8 +77,12 @@ function Toggle() {
       }
     }
     navigation.style.background = "rgba(255, 255, 255, 0.9)"
-    eventsTitle.style.color = "white"
-    eventsTitle.style.background = "none"
+    try {
+        eventsTitle.style.color = "rgb(255, 255, 255)"
+        eventsTitle.style.background = "none"
+    } catch {
+        let o = "o"
+    }
   } else {
     active = darkToggle;
     notActive = lightToggle;
@@ -84,8 +97,12 @@ function Toggle() {
       }
     }
     navigation.style.background = "rgba(30, 30, 30, 0.9)"
-    eventsTitle.style.color = "rgb(30, 30, 30)"
-    eventsTitle.style.background = "none"
+    try {
+        eventsTitle.style.color = "rgb(30, 30, 30)"
+        eventsTitle.style.background = "none"
+    } catch {
+        let o = "o"
+    }
   }
 
   active.style.opacity = "1"
