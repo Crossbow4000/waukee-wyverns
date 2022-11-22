@@ -7,13 +7,14 @@ navigation = document.getElementsByClassName("navigation")[0];
 
 
 if ( localStorage.getItem("mode") != "light" || localStorage.getItem("mode") != "dark" ) {
-  localStorage.setItem("mode", "dark")
+  alert(localStorage.getItem("mode"))
+  localStorage.setItem("mode", "light")
 }
 
 
 if ( localStorage.getItem("mode") == "light")  {
-  active = darkToggle;
-  notActive = lightToggle;
+  active = lightToggle;
+  notActive = darkToggle;
 
   for ( let i in elements ) {
     try {
@@ -24,8 +25,8 @@ if ( localStorage.getItem("mode") == "light")  {
   }
   navigation.style.background = "rgba(255, 255, 255, 0.9)"
 } else {
-  active = lightToggle;
-  notActive = darkToggle;
+  active = darkToggle;
+  notActive = lightToggle;
 
 
   for ( let i in elements ) {
@@ -47,8 +48,8 @@ notActive.style.opacity = "0"
 
 function Toggle() {
   if ( localStorage.getItem("mode") == "light")  {
-    active = darkToggle;
-    notActive = lightToggle;
+    active = lightToggle;
+    notActive = darkToggle;
 
     localStorage.setItem("mode", "dark")
 
@@ -61,8 +62,8 @@ function Toggle() {
     }
     navigation.style.background = "rgba(255, 255, 255, 0.9)"
   } else {
-    active = lightToggle;
-    notActive = darkToggle;
+    active = darkToggle;
+    notActive = lightToggle;
 
     localStorage.setItem("mode", "light")
 
