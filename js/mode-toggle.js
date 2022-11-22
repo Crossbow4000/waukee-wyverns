@@ -4,6 +4,7 @@ let darkToggle = document.getElementById("moon");
 elements = document.getElementsByClassName("dark-toggle");
 
 navigation = document.getElementsByClassName("navigation")[0];
+eventsTitle = document.getElementsByClassName("events-title")[0];
 
 
 if ( localStorage.getItem("mode") != "light" && localStorage.getItem("mode") != "dark" ) {
@@ -25,6 +26,8 @@ if ( localStorage.getItem("mode") == "dark")  {
       }
     }
     navigation.style.background = "rgba(255, 255, 255, 0.9)"
+    eventsTitle.style.color = "white"
+    eventsTitle.style.background = "none"
     } else {
     active = darkToggle;
     notActive = lightToggle;
@@ -39,6 +42,8 @@ if ( localStorage.getItem("mode") == "dark")  {
       }
     }
     navigation.style.background = "rgba(30, 30, 30, 0.9)"
+    eventsTitle.style.color = "rgb(30, 30, 30)"
+    eventsTitle.style.background = "none"
 }
 
 
@@ -63,6 +68,8 @@ function Toggle() {
       }
     }
     navigation.style.background = "rgba(255, 255, 255, 0.9)"
+    eventsTitle.style.color = "white"
+    eventsTitle.style.background = "none"
   } else {
     active = darkToggle;
     notActive = lightToggle;
@@ -77,6 +84,8 @@ function Toggle() {
       }
     }
     navigation.style.background = "rgba(30, 30, 30, 0.9)"
+    eventsTitle.style.color = "rgb(30, 30, 30)"
+    eventsTitle.style.background = "none"
   }
 
   active.style.opacity = "1"
