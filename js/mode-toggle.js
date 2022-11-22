@@ -15,6 +15,8 @@ if ( localStorage.getItem("mode") == "light")  {
   active = lightToggle;
   notActive = darkToggle;
 
+  localStorage.setItem("mode", "dark")
+
   for ( let i in elements ) {
     try {
       elements[i].style.background = "white"
@@ -27,6 +29,7 @@ if ( localStorage.getItem("mode") == "light")  {
   active = darkToggle;
   notActive = lightToggle;
 
+localStorage.setItem("mode", "light")
 
   for ( let i in elements ) {
     try {
