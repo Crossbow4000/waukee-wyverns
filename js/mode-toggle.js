@@ -19,12 +19,12 @@ if ( localStorage.getItem("mode") == "light")  {
 
   for ( let i in elements ) {
     try {
-      elements[i].style.background = "white"
+      elements[i].style.background = "rgb(30, 30, 30)"
     } catch {
       let o = "o"
     }
   }
-  navigation.style.background = "rgba(255, 255, 255, 0.9)"
+  navigation.style.background = "rgba(30, 30, 30, 0.9)"
 } else {
   active = darkToggle;
   notActive = lightToggle;
@@ -33,12 +33,12 @@ localStorage.setItem("mode", "light")
 
   for ( let i in elements ) {
     try {
-      elements[i].style.background = "rgb(30, 30, 30)"
+      elements[i].style.background = "white"
     } catch {
       let o = "o"
     }
   }
-  navigation.style.background = "rgba(30, 30, 30, 0.9)"
+  navigation.style.background = "rgba(255, 255, 255, 0.9)"
 }
 
 
