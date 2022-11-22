@@ -28,6 +28,7 @@ h1 {
 
 .mode-toggle {
     display: grid;
+    cursor: pointer;
 }
 
 .moon {

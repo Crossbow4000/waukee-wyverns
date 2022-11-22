@@ -131,6 +131,15 @@ fetch(api_url)
     if (foundEvent == false) {
         CreateEvents()
 
+        node = document.createTextNode("ㅤ");
+        type_title.appendChild(node);
+        card.appendChild(type_title);
+
+        node = document.createTextNode("No events right now, check in later.");
+        type.appendChild(node);
+        card.appendChild(type);
+
+        events_section.appendChild(card);
         DestroyEvents()
     }
   });
