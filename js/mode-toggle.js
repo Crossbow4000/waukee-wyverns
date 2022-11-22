@@ -11,7 +11,7 @@ if ( localStorage.getItem("mode") != "light" && localStorage.getItem("mode") != 
 }
 
 
-if ( localStorage.getItem("mode") == "light")  {
+if ( localStorage.getItem("mode") == "dark")  {
     active = lightToggle;
     notActive = darkToggle;
 
