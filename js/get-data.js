@@ -143,4 +143,7 @@ fetch(api_url)
         events_section.appendChild(card);
         DestroyEvents()
     }
+    Toggle()
+    Toggle();;
   });
+
