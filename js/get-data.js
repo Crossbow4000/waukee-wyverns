@@ -177,7 +177,7 @@ fetch(api_url)
         type_title.appendChild(node);
         card.appendChild(type_title);
 
-        node = document.createTextNode("No events right now, check in later.");
+        node = document.createTextNode("No events later this week.");
         type.appendChild(node);
         card.appendChild(type);
 

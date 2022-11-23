@@ -76,6 +76,35 @@
   font-weight: 900;
 }
 
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-all {
+    transition: 200ms ease-in-out;
+    border: none;
+    background: rgb(30, 30, 30);
+    width: 10em;
+    height: 4em;
+    margin-top: -20px;
+    margin-bottom: 25px;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 40px rgba(32, 41, 126, 0.8);
+    cursor: pointer;
+}
+
+.view-all:hover {
+    box-shadow: 0px 0px 60px rgba(32, 41, 126, 0.9);
+    opacity: 0.9;
+}
+
+.view-all-text {
+    font-size: 20px;
+    color: royalblue;
+}
+
 .contact {
   line-height: 10px;
   padding: 20px;
