@@ -4,6 +4,31 @@ const api_url = 'https://script.googleusercontent.com/macros/echo?user_content_k
 
 let node
 
+let events = 0;
+let maxEvents = 2;
+
+const d = new Date().getDay();
+
+let days = {
+    Monday: 0,
+    Tuesday: 1,
+    Wednesday: 2,
+    Thursday: 3,
+    Friday: 4,
+    Saturday: 5,
+    Sunday: 6
+};
+
+let day_map = {
+    0: 6,
+    1: 0,
+    2: 1,
+    3: 2,
+    4: 3,
+    5: 4,
+    6: 5
+}
+
 let foundEvent = false;
 
 function CreateEvents() {
@@ -48,86 +73,102 @@ fetch(api_url)
   .then((response) => response.json())
   .then(json => {
     for (let i = 0; i <= 4; i++) {
-        if (json[i].Practice != false) {
-            foundEvent = true;
-            CreateEvents()
+        if ( days[json[i].Day] >= day_map[d] ) {
 
-            node = document.createTextNode("Type")
-            type_title.appendChild(node)
-            card.appendChild(type_title)
+            if ( events >= maxEvents ) {
+                break
+            }
 
-            node = document.createTextNode("Practice (" + json[i].Practice + ")")
-            type.appendChild(node)
-            card.appendChild(type)
+            if (json[i].Practice != false) {
+                events++
 
-            node = document.createTextNode("Day")
-            day_title.appendChild(node)
-            card.appendChild(day_title)
+                foundEvent = true;
+                CreateEvents()
 
-            node = document.createTextNode(json[i].Day)
-            day.appendChild(node)
-            card.appendChild(day)
+                node = document.createTextNode("Type")
+                type_title.appendChild(node)
+                card.appendChild(type_title)
 
-            node = document.createTextNode("Time")
-            time_title.appendChild(node)
-            card.appendChild(time_title)
+                node = document.createTextNode("Practice (" + json[i].Practice + ")")
+                type.appendChild(node)
+                card.appendChild(type)
 
-            node = document.createTextNode(json[i].PTime)
-            time.appendChild(node)
-            card.appendChild(time)
+                node = document.createTextNode("Day")
+                day_title.appendChild(node)
+                card.appendChild(day_title)
 
-            node = document.createTextNode("Location")
-            location_title.appendChild(node)
-            card.appendChild(location_title)
+                node = document.createTextNode(json[i].Day)
+                day.appendChild(node)
+                card.appendChild(day)
 
-            node = document.createTextNode(json[i].PLocation)
-            place.appendChild(node)
-            card.appendChild(place)
+                node = document.createTextNode("Time")
+                time_title.appendChild(node)
+                card.appendChild(time_title)
 
-            events_section.appendChild(card)
-            DestroyEvents()
+                node = document.createTextNode(json[i].PTime)
+                time.appendChild(node)
+                card.appendChild(time)
+
+                node = document.createTextNode("Location")
+                location_title.appendChild(node)
+                card.appendChild(location_title)
+
+                node = document.createTextNode(json[i].PLocation)
+                place.appendChild(node)
+                card.appendChild(place)
+
+                events_section.appendChild(card)
+                DestroyEvents()
+
+            }
+            if ( events >= maxEvents ) {
+                break
+            }
+            if (json[i].Match != false) {
+                events++
+
+                foundEvent = true;
+                CreateEvents()
+
+                node = document.createTextNode("Type")
+                type_title.appendChild(node)
+                card.appendChild(type_title)
+
+                node = document.createTextNode("Match (" + json[i].Match + ")")
+                type.appendChild(node)
+                card.appendChild(type)
+
+                node = document.createTextNode("Day")
+                day_title.appendChild(node)
+                card.appendChild(day_title)
+
+                node = document.createTextNode(json[i].Day)
+                day.appendChild(node)
+                card.appendChild(day)
+
+                node = document.createTextNode("Time")
+                time_title.appendChild(node)
+                card.appendChild(time_title)
+
+                node = document.createTextNode(json[i].MTime)
+                time.appendChild(node)
+                card.appendChild(time)
+
+                node = document.createTextNode("Location")
+                location_title.appendChild(node)
+                card.appendChild(location_title)
+
+                node = document.createTextNode(json[i].MLocation)
+                place.appendChild(node)
+                card.appendChild(place)
+
+                events_section.appendChild(card)
+                DestroyEvents()
+
+            }
 
         }
-        if (json[i].Match != false) {
-            foundEvent = true;
-            CreateEvents()
 
-            node = document.createTextNode("Type")
-            type_title.appendChild(node)
-            card.appendChild(type_title)
-
-            node = document.createTextNode("Match (" + json[i].Match + ")")
-            type.appendChild(node)
-            card.appendChild(type)
-
-            node = document.createTextNode("Day")
-            day_title.appendChild(node)
-            card.appendChild(day_title)
-
-            node = document.createTextNode(json[i].Day)
-            day.appendChild(node)
-            card.appendChild(day)
-
-            node = document.createTextNode("Time")
-            time_title.appendChild(node)
-            card.appendChild(time_title)
-
-            node = document.createTextNode(json[i].MTime)
-            time.appendChild(node)
-            card.appendChild(time)
-
-            node = document.createTextNode("Location")
-            location_title.appendChild(node)
-            card.appendChild(location_title)
-
-            node = document.createTextNode(json[i].MLocation)
-            place.appendChild(node)
-            card.appendChild(place)
-
-            events_section.appendChild(card)
-            DestroyEvents()
-
-        }
     }
     if (foundEvent == false) {
         CreateEvents()
