@@ -32,6 +32,17 @@ if ( localStorage.getItem("mode") == "dark")  {
     } catch {
         let o = "o"
     }
+    try {
+      document.getElementById('monday').setAttribute('data-mode', "light")
+      document.getElementById('tuesday').setAttribute('data-mode', "light")
+      document.getElementById('wednesday').setAttribute('data-mode', "light")
+      document.getElementById('thursday').setAttribute('data-mode', "light")
+      document.getElementById('friday').setAttribute('data-mode', "light")
+      document.getElementById('saturday').setAttribute('data-mode', "light")
+      document.getElementById('sunday').setAttribute('data-mode', "light")
+    } catch {
+        let o = "o"
+    }
     } else {
     active = darkToggle;
     notActive = lightToggle;
@@ -49,6 +60,17 @@ if ( localStorage.getItem("mode") == "dark")  {
     try {
         eventsTitle.style.color = "rgb(30, 30, 30)"
         eventsTitle.style.background = "none"
+    } catch {
+        let o = "o"
+    }
+    try {
+      document.getElementById('monday').setAttribute('data-mode', "dark")
+      document.getElementById('tuesday').setAttribute('data-mode', "dark")
+      document.getElementById('wednesday').setAttribute('data-mode', "dark")
+      document.getElementById('thursday').setAttribute('data-mode', "dark")
+      document.getElementById('friday').setAttribute('data-mode', "dark")
+      document.getElementById('saturday').setAttribute('data-mode', "dark")
+      document.getElementById('sunday').setAttribute('data-mode', "dark")
     } catch {
         let o = "o"
     }
@@ -83,6 +105,17 @@ function Toggle() {
     } catch {
         let o = "o"
     }
+    try {
+      document.getElementById('monday').setAttribute('data-mode', "light")
+      document.getElementById('tuesday').setAttribute('data-mode', "light")
+      document.getElementById('wednesday').setAttribute('data-mode', "light")
+      document.getElementById('thursday').setAttribute('data-mode', "light")
+      document.getElementById('friday').setAttribute('data-mode', "light")
+      document.getElementById('saturday').setAttribute('data-mode', "light")
+      document.getElementById('sunday').setAttribute('data-mode', "light")
+    } catch {
+        let o = "o"
+    }
   } else {
     active = darkToggle;
     notActive = lightToggle;
@@ -100,6 +133,17 @@ function Toggle() {
     try {
         eventsTitle.style.color = "rgb(30, 30, 30)"
         eventsTitle.style.background = "none"
+    } catch {
+        let o = "o"
+    }
+    try {
+      document.getElementById('monday').setAttribute('data-mode', "dark")
+      document.getElementById('tuesday').setAttribute('data-mode', "dark")
+      document.getElementById('wednesday').setAttribute('data-mode', "dark")
+      document.getElementById('thursday').setAttribute('data-mode', "dark")
+      document.getElementById('friday').setAttribute('data-mode', "dark")
+      document.getElementById('saturday').setAttribute('data-mode', "dark")
+      document.getElementById('sunday').setAttribute('data-mode', "dark")
     } catch {
         let o = "o"
     }
