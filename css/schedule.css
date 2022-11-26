@@ -6,11 +6,29 @@
     display: flex;
 }
 .days {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
-.selectable-day {
+.selectable-day[data-mode=dark] {
+    grid-row: 1;
+    grid-column: 2;
+    color: rgb(30, 30, 30);
+    background: royalblue;
+    padding-inline: 13px;
+    padding-block: 9px;
+    margin-block: 32px;
+    margin-inline: 10px;
+    border-radius: 0.2em;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+    font-weight: 900;
+}
+.selectable-day[data-mode=light] {
+    grid-row: 1;
+    grid-column: 2;
     color: white;
     background: royalblue;
     padding-inline: 13px;
@@ -21,6 +39,7 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
     transition: 200ms ease-in-out;
     cursor: pointer;
+    font-weight: 900;
 }
 .selectable-day:hover {
     padding-inline: 14px;
@@ -33,8 +52,18 @@
 img {
     height: 26.29175;
     cursor: pointer;
+    
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 .img-flip {
     transform: rotate(180deg);
+}
+#day-right {
+    grid-row: 1;
+    grid-column: 3;
 }
