@@ -35,14 +35,39 @@
         <div class="menu-divider"></div>
         
         <section class="weekly-events">
-            <h1 class="weekly-title">This Week's Events</h1>
-            <div class="event">
-                <h2>Practice : <span>Varsity</span></h2>
+            <div class="day-selection">
+                <div class="days">
+                    <img src="images/chevron.svg" id="day-left">
+                    <p class="selectable-day day-monday" id="monday">Monday</p>
+                    <p class="selectable-day day-tuesday" id="tuesday">Tuesday</p>
+                    <p class="selectable-day day-wednesday" id="wednesday">Wednesday</p>
+                    <p class="selectable-day day-thursday" id="thursday">Thursday</p>
+                    <p class="selectable-day day-friday" id="friday">Friday</p>
+                    <p class="selectable-day day-saturday" id="saturday">Saturday</p>
+                    <p class="selectable-day day-sunday" id="sunday">Sunday</p>
+                    <img src="images/chevron.svg" class="img-flip" id="day-right">
+                </div>
+
             </div>
+            <div class="event-info">
+
+            </div>
+            <div class="event-selection">
+                <!-- < Left Arrow -->
+                <div class="event-selection-numbers">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                    <p>4</p>
+                </div>
+                <!-- > Right Arrow -->
+            </div>
+
+
         </section>
 
         <script src="js/main.js" async defer></script>
         <script src="js/mode-toggle.js" async defer></script>
-        <script src="js/get-full.js" async defer></script>
+        <script src="js/schedule.js" async defer></script>
     </body>
 </html>
