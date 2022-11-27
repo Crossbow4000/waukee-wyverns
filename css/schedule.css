@@ -45,13 +45,6 @@
 img {
     height: 26.29175;
     cursor: pointer;
-    
-    -webkit-touch-callout: none; 
-    -webkit-user-select: none; 
-    -khtml-user-select: none; 
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 .img-flip {
     transform: rotate(180deg);
@@ -60,3 +53,37 @@ img {
     grid-row: 1;
     grid-column: 3;
 }
+
+.event-selection-numbers {
+    display: flex;
+    justify-content: center;
+}
+
+.event-selection-number {
+    margin-inline: 10px;
+    padding-inline: 14px;
+    padding-block: 5px;
+    transition: 200ms ease-in-out;
+}
+
+.event-selection-number[data-selected=false] {
+    background: none;
+    color: rgb(117, 117, 117);
+}
+
+.event-selection-number[data-selected=true] {
+    background: royalblue;
+    color: white;
+    border-radius: 0.1rem;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+}
+
+.event-selection-number[data-selected=true]:hover {
+    margin-inline: 9.5px;
+    padding-inline: 14.5px;
+    padding-block: 5.5px;
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.4);
+}
+
+
+

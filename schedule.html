@@ -37,7 +37,7 @@
         <section class="weekly-events">
             <div class="day-selection">
                 <div class="days">
-                    <img src="images/chevron.svg" id="day-left">
+                    <img src="images/chevron.svg" id="day-left" class="no-select">
                     <p class="selectable-day day-monday" id="monday" data-mode="dark">Monday</p>
                     <p class="selectable-day day-tuesday" id="tuesday" data-mode="dark">Tuesday</p>
                     <p class="selectable-day day-wednesday" id="wednesday" data-mode="dark">Wednesday</p>
@@ -45,7 +45,7 @@
                     <p class="selectable-day day-friday" id="friday" data-mode="dark">Friday</p>
                     <p class="selectable-day day-saturday" id="saturday" data-mode="dark">Saturday</p>
                     <p class="selectable-day day-sunday" id="sunday" data-mode="dark">Sunday</p>
-                    <img src="images/chevron.svg" class="img-flip" id="day-right">
+                    <img src="images/chevron.svg" class="img-flip no-select" id="day-right">
                 </div>
 
             </div>
@@ -55,10 +55,10 @@
             <div class="event-selection">
                 <!-- < Left Arrow -->
                 <div class="event-selection-numbers">
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
-                    <p>4</p>
+                    <p class="event-selection-number no-select" id="1" data-selected="false">1</p>
+                    <p class="event-selection-number no-select" id="2" data-selected="false">2</p>
+                    <p class="event-selection-number no-select" id="3" data-selected="true">3</p>
+                    <p class="event-selection-number no-select" id="4" data-selected="false">4</p>
                 </div>
                 <!-- > Right Arrow -->
             </div>

@@ -6,6 +6,9 @@ elements = document.getElementsByClassName("dark-toggle");
 navigation = document.getElementsByClassName("navigation")[0];
 eventsTitle = document.getElementsByClassName("events-title")[0];
 
+textShift = document.getElementsByClassName("text-color-shift");
+
+eventSelectionNumbers = document.getElementsByClassName("event-selection-number");
 
 if ( localStorage.getItem("mode") != "light" && localStorage.getItem("mode") != "dark" ) {
   localStorage.setItem("mode", "light")
@@ -25,6 +28,27 @@ if ( localStorage.getItem("mode") == "dark")  {
         let o = "o"
       }
     }
+
+    for ( let k in textShift ) {
+        try {
+            textShift[k].style.color = "white"
+        } catch {
+            let o = "o"
+        }
+    }
+
+    for (let l in eventSelectionNumbers ) {
+        try {
+            if (eventSelectionNumbers[l].getAttribute("data-selected") == "true") {
+                eventSelectionNumbers[l].style.color = "white"
+            } else {
+                eventSelectionNumbers[l].style.color = "rgb(117, 117, 117)";
+            }
+        } catch {
+            let o = "o"
+        }
+    }
+
     navigation.style.background = "rgba(255, 255, 255, 0.9)"
     try {
         eventsTitle.style.color = "rgb(255, 255, 255)"
@@ -56,6 +80,27 @@ if ( localStorage.getItem("mode") == "dark")  {
         let o = "o"
       }
     }
+
+    for (let l in eventSelectionNumbers ) {
+        try {
+            if (eventSelectionNumbers[l].getAttribute("data-selected") == "true") {
+                eventSelectionNumbers[l].style.color = "rgb(30, 30, 30)"
+            } else {
+                eventSelectionNumbers[l].style.color = "rgb(117, 117, 117)";
+            }
+        } catch {
+            let o = "o"
+        }
+    }
+
+    for ( let k in textShift ) {
+        try {
+            textShift[k].style.color = "rgb(30, 30, 30)"
+        } catch {
+            let o = "o"
+        }
+    }
+
     navigation.style.background = "rgba(30, 30, 30, 0.9)"
     try {
         eventsTitle.style.color = "rgb(30, 30, 30)"
@@ -98,6 +143,27 @@ function Toggle() {
         let o = "o"
       }
     }
+
+    for ( let k in textShift ) {
+        try {
+            textShift[k].style.color = "white"
+        } catch {
+            let o = "o"
+        }
+    }
+
+    for (let l in eventSelectionNumbers ) {
+        try {
+            if (eventSelectionNumbers[l].getAttribute("data-selected") == "true") {
+                eventSelectionNumbers[l].style.color = "white"
+            } else {
+                eventSelectionNumbers[l].style.color = "rgb(117, 117, 117)";
+            }
+        } catch {
+            let o = "o"
+        }
+    }
+
     navigation.style.background = "rgba(255, 255, 255, 0.9)"
     try {
         eventsTitle.style.color = "rgb(255, 255, 255)"
@@ -129,6 +195,27 @@ function Toggle() {
         let o = "o"
       }
     }
+
+    for ( let k in textShift ) {
+        try {
+            textShift[k].style.color = "rgb(30, 30, 30)"
+        } catch {
+            let o = "o"
+        }
+    }
+
+    for (let l in eventSelectionNumbers ) {
+        try {
+            if (eventSelectionNumbers[l].getAttribute("data-selected") == "true") {
+                eventSelectionNumbers[l].style.color = "rgb(30, 30, 30)"
+            } else {
+                eventSelectionNumbers[l].style.color = "rgb(117, 117, 117)";
+            }
+        } catch {
+            let o = "o"
+        }
+    }
+
     navigation.style.background = "rgba(30, 30, 30, 0.9)"
     try {
         eventsTitle.style.color = "rgb(30, 30, 30)"
