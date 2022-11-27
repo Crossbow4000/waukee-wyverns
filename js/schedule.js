@@ -167,7 +167,10 @@ function CreateEvents() {
   }  
 
 function Reload() {
-    numObjects = 0;
+    document.getElementById("1").style.display = "none"
+    document.getElementById("2").style.display = "none"
+    document.getElementById("3").style.display = "none"
+    document.getElementById("4").style.display = "none"
     current_day_events = [];
     fetch(api_url)
         .then(response => response.json())
@@ -176,11 +179,39 @@ function Reload() {
                 if (days[json.data[i].Day] == current_day) {
                     if (json.data[i].Practice != false) {
                         current_day_events.push(json.data[i])
-                    } else if (json.data[i].Match != false) {
+                    }
+                    if (json.data[i].Match != false) {
                         current_day_events.push(json.data[i])
                     }
                 }
             }
+            if (current_day_events.length == 4) {
+                document.getElementById("1").style.display = "block"
+                document.getElementById("2").style.display = "block"
+                document.getElementById("3").style.display = "block"
+                document.getElementById("4").style.display = "block"
+            } else if (current_day_events.length == 3) {
+                document.getElementById("1").style.display = "block"
+                document.getElementById("2").style.display = "block"
+                document.getElementById("3").style.display = "block"
+                document.getElementById("4").style.display = "none"
+            } else if (current_day_events.length == 2) {
+                document.getElementById("1").style.display = "block"
+                document.getElementById("2").style.display = "block"
+                document.getElementById("3").style.display = "none"
+                document.getElementById("4").style.display = "none"
+            } else if (current_day_events.length == 1) {
+                document.getElementById("1").style.display = "block"
+                document.getElementById("2").style.display = "none"
+                document.getElementById("3").style.display = "none"
+                document.getElementById("4").style.display = "none"
+            } else {
+                document.getElementById("1").style.display = "none"
+                document.getElementById("2").style.display = "none"
+                document.getElementById("3").style.display = "none"
+                document.getElementById("4").style.display = "none"
+            }
+
         });
 }
 
