@@ -205,5 +205,41 @@ document.getElementById('day-right').addEventListener('click', () => {
     Reload();
 });
 
+document.getElementById("1").addEventListener("click", () => {
+    document.getElementById("1").setAttribute('data-selected', 'true')
+    document.getElementById("2").setAttribute('data-selected', 'false')
+    document.getElementById("3").setAttribute('data-selected', 'false')
+    document.getElementById("4").setAttribute('data-selected', 'false')
+    Toggle();
+    Toggle();
+});
+
+document.getElementById("2").addEventListener("click", () => {
+    document.getElementById("1").setAttribute('data-selected', 'false')
+    document.getElementById("2").setAttribute('data-selected', 'true')
+    document.getElementById("3").setAttribute('data-selected', 'false')
+    document.getElementById("4").setAttribute('data-selected', 'false')
+    Toggle();
+    Toggle();
+});
+
+document.getElementById("3").addEventListener("click", () => {
+    document.getElementById("1").setAttribute('data-selected', 'false')
+    document.getElementById("2").setAttribute('data-selected', 'false')
+    document.getElementById("3").setAttribute('data-selected', 'true')
+    document.getElementById("4").setAttribute('data-selected', 'false')
+    Toggle();
+    Toggle();
+});
+
+document.getElementById("4").addEventListener("click", () => {
+    document.getElementById("1").setAttribute('data-selected', 'false')
+    document.getElementById("2").setAttribute('data-selected', 'false')
+    document.getElementById("3").setAttribute('data-selected', 'false')
+    document.getElementById("4").setAttribute('data-selected', 'true')
+    Toggle();
+    Toggle();
+});
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
