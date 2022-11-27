@@ -112,6 +112,33 @@ document.getElementById('day-right').addEventListener('click', () => {
 //   FINDING EVENTS FOR THE DAY   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+let days = {
+    Monday: 0,
+    Tuesday: 1,
+    Wednesday: 2,
+    Thursday: 3,
+    Friday: 4,
+    Saturday: 5,
+    Sunday: 6
+};
+
+let day_map = {
+    0: 6,
+    1: 0,
+    2: 1,
+    3: 2,
+    4: 3,
+    5: 4,
+    6: 5
+};
+
+let api_url = 'https://script.googleusercontent.com/macros/echo?user_content_key=JguR9GHXPsJ9DqTtnDlYjmFKdIl-QLs1OZSpPxgl1MrrebH4Ae7fJC5HMfrYgqXAwO3g-OiWsE9VOYmZn7ym0t3GY5Vu5_tVm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJHuS9z0YuhrT-3Vq260P0SEZjS-CAk89NyabIMq29l37BewtScA0vkHXISjUnmfNKT-onlEH2COoNZVO3cHtXkMxjqVWQYRkg&lib=MN6OZnxKwUW0oF-2LQ9t5J1IOmpMGpgTG';
+
+fetch(api_url)
+    .then(response => response.json())
+    .then((json) => {
+        console.log(json.data[0])
+    });
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
