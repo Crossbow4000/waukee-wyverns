@@ -94,14 +94,6 @@ function Change_Day(increment, decrement, index) {
     }
 }
 
-document.getElementById('day-left').addEventListener('click', () => {
-    Change_Day(false, true, 0);
-});
-
-document.getElementById('day-right').addEventListener('click', () => {
-    Change_Day(true, false, 0);
-});
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -134,12 +126,84 @@ let day_map = {
 
 let api_url = 'https://script.googleusercontent.com/macros/echo?user_content_key=JguR9GHXPsJ9DqTtnDlYjmFKdIl-QLs1OZSpPxgl1MrrebH4Ae7fJC5HMfrYgqXAwO3g-OiWsE9VOYmZn7ym0t3GY5Vu5_tVm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJHuS9z0YuhrT-3Vq260P0SEZjS-CAk89NyabIMq29l37BewtScA0vkHXISjUnmfNKT-onlEH2COoNZVO3cHtXkMxjqVWQYRkg&lib=MN6OZnxKwUW0oF-2LQ9t5J1IOmpMGpgTG';
 
-fetch(api_url)
-    .then(response => response.json())
-    .then((json) => {
-        console.log(json.data[0])
-    });
+let number_of_events = 0;
+
+let current_day_events = [];
+
+function CreateEvents() {
+    events_section = document.getElementById("events");
+    card = document.createElement("div");
+    card.classList.add("event-card");
+    card.classList.add("dark-toggle");
+    type_title = document.createElement("p");
+    type_title.classList.add("card-title");
+    type = document.createElement("h1");
+    type.classList.add("event-text");
+    day_title = document.createElement("p");
+    day_title.classList.add("card-title");
+    day = document.createElement("h1");
+    day.classList.add("event-text");
+    time_title = document.createElement("p")
+    time_title.classList.add("card-title");
+    time = document.createElement("p");
+    time.classList.add("event-text");
+    location_title = document.createElement("p");
+    location_title.classList.add("card-title");
+    place = document.createElement("h1");
+    place.classList.add("event-text");
+  }
+  
+  function DestroyEvents() {
+    delete events_section;
+    delete card;
+    delete type_title;
+    delete type;
+    delete day_title;
+    delete day;
+    delete time_title;
+    delete time;
+    delete location_title;
+    delete place;
+  }  
+
+function Reload() {
+    numObjects = 0;
+    current_day_events = [];
+    fetch(api_url)
+        .then(response => response.json())
+        .then((json) => {
+            for (let i in json.data) {
+                if (days[json.data[i].Day] == current_day) {
+                    if (json.data[i].Practice != false) {
+                        current_day_events.push(json.data[i])
+                    } else if (json.data[i].Match != false) {
+                        current_day_events.push(json.data[i])
+                    }
+                }
+            }
+        });
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+//   UPDATE   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Reload()
+document.getElementById('day-left').addEventListener('click', () => {
+    Change_Day(false, true, 0);
+    Reload();
+});
+
+document.getElementById('day-right').addEventListener('click', () => {
+    Change_Day(true, false, 0);
+    Reload();
+});
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
