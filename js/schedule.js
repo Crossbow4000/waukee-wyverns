@@ -247,6 +247,20 @@ function Reload() {
                 }
             }
 
+            if (document.getElementById("event-info-container").children.length == 0) {
+                CreateEvents();
+
+
+                noEvents = document.createElement("h1");
+                noEvents.classList.add("no-events")
+                node = document.createTextNode("No events today.");
+                noEvents.appendChild(node);
+                card.appendChild(noEvents);
+                document.getElementById("event-info-container").appendChild(card);
+
+                DestroyEvents();
+            }
+
             try {
                 document.getElementById("event-info-container").children[0].style.display = "block"
                 document.getElementById("event-info-container").children[1].style.display = "none"

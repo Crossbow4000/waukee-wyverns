@@ -116,3 +116,9 @@ img {
     font-size: 25px;
     font-weight: 900;
 }
+
+.no-events {
+    color: royalblue;
+    font-size: 20px;
+    text-align: center;
+}
