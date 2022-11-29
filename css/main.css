@@ -72,6 +72,9 @@ h1 {
   margin-block: -10%;
   background: rgba(255, 255, 255, 0.9)
 }
+.text-color-shift {
+    transition: 200ms ease-in-out;
+}
 .menu-bar svg {
   fill: royalblue;
   height: 1.5em;

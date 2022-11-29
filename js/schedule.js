@@ -133,24 +133,20 @@ let current_day_events = [];
 function CreateEvents() {
     events_section = document.getElementById("events");
     card = document.createElement("div");
-    card.classList.add("event-card");
+    card.classList.add("event-info");
     card.classList.add("dark-toggle");
-    type_title = document.createElement("p");
-    type_title.classList.add("card-title");
-    type = document.createElement("h1");
-    type.classList.add("event-text");
-    day_title = document.createElement("p");
-    day_title.classList.add("card-title");
-    day = document.createElement("h1");
-    day.classList.add("event-text");
-    time_title = document.createElement("p")
-    time_title.classList.add("card-title");
+    type_title = document.createElement("h3");
+    type_title.classList.add("title");
+    type = document.createElement("p");
+    type.classList.add("para");
+    time_title = document.createElement("h3")
+    time_title.classList.add("title");
     time = document.createElement("p");
-    time.classList.add("event-text");
-    location_title = document.createElement("p");
-    location_title.classList.add("card-title");
-    place = document.createElement("h1");
-    place.classList.add("event-text");
+    time.classList.add("para");
+    location_title = document.createElement("h3");
+    location_title.classList.add("title");
+    place = document.createElement("p");
+    place.classList.add("para");
   }
   
   function DestroyEvents() {
@@ -167,24 +163,99 @@ function CreateEvents() {
   }  
 
 function Reload() {
+    while (document.getElementById("event-info-container").lastChild) {
+        document.getElementById("event-info-container").lastChild.remove();
+    }
+    document.getElementById("1").setAttribute('data-selected', 'true')
+    document.getElementById("2").setAttribute('data-selected', 'false')
+    document.getElementById("3").setAttribute('data-selected', 'false')
+    document.getElementById("4").setAttribute('data-selected', 'false')
+    Toggle();
+    Toggle();
     document.getElementById("1").style.display = "none"
     document.getElementById("2").style.display = "none"
     document.getElementById("3").style.display = "none"
     document.getElementById("4").style.display = "none"
-    current_day_events = [];
     fetch(api_url)
         .then(response => response.json())
         .then((json) => {
+            current_day_events = [];
             for (let i in json.data) {
                 if (days[json.data[i].Day] == current_day) {
                     if (json.data[i].Practice != false) {
                         current_day_events.push(json.data[i])
+                        CreateEvents();
+
+                        node = document.createTextNode("Type");
+                        type_title.appendChild(node);
+                        card.appendChild(type_title);
+
+                        node = document.createTextNode("Practice (" + json.data[i].Practice + ")");
+                        type.appendChild(node);
+                        card.appendChild(type);
+
+                        node = document.createTextNode("Time")
+                        time_title.appendChild(node)
+                        card.appendChild(time_title)
+
+                        node = document.createTextNode(json.data[i].PTime)
+                        time.appendChild(node)
+                        card.appendChild(time)
+
+                        node = document.createTextNode("Location")
+                        location_title.appendChild(node)
+                        card.appendChild(location_title)
+
+                        node = document.createTextNode(json.data[i].PLocation)
+                        place.appendChild(node)
+                        card.appendChild(place)
+
+                        document.getElementById("event-info-container").appendChild(card);
+                        DestroyEvents();
                     }
                     if (json.data[i].Match != false) {
                         current_day_events.push(json.data[i])
+                        CreateEvents();
+
+                        node = document.createTextNode("Type");
+                        type_title.appendChild(node);
+                        card.appendChild(type_title);
+
+                        node = document.createTextNode("Match (" + json.data[i].Match + ")");
+                        type.appendChild(node);
+                        card.appendChild(type);
+
+                        node = document.createTextNode("Time")
+                        time_title.appendChild(node)
+                        card.appendChild(time_title)
+
+                        node = document.createTextNode(json.data[i].MTime)
+                        time.appendChild(node)
+                        card.appendChild(time)
+
+                        node = document.createTextNode("Location")
+                        location_title.appendChild(node)
+                        card.appendChild(location_title)
+
+                        node = document.createTextNode(json.data[i].MLocation)
+                        place.appendChild(node)
+                        card.appendChild(place)
+
+                        document.getElementById("event-info-container").appendChild(card);
+                        DestroyEvents();
                     }
                 }
             }
+
+            try {
+                document.getElementById("event-info-container").children[0].style.display = "block"
+                document.getElementById("event-info-container").children[1].style.display = "none"
+                document.getElementById("event-info-container").children[2].style.display = "none"
+                document.getElementById("event-info-container").children[3].style.display = "none"
+            } catch {
+                let o = "o"
+            }
+
             if (current_day_events.length == 4) {
                 document.getElementById("1").style.display = "block"
                 document.getElementById("2").style.display = "block"
@@ -243,6 +314,10 @@ document.getElementById("1").addEventListener("click", () => {
     document.getElementById("4").setAttribute('data-selected', 'false')
     Toggle();
     Toggle();
+    document.getElementById("event-info-container").children[0].style.display = "block"
+    document.getElementById("event-info-container").children[1].style.display = "none"
+    document.getElementById("event-info-container").children[2].style.display = "none"
+    document.getElementById("event-info-container").children[3].style.display = "none"
 });
 
 document.getElementById("2").addEventListener("click", () => {
@@ -252,6 +327,10 @@ document.getElementById("2").addEventListener("click", () => {
     document.getElementById("4").setAttribute('data-selected', 'false')
     Toggle();
     Toggle();
+    document.getElementById("event-info-container").children[0].style.display = "none"
+    document.getElementById("event-info-container").children[1].style.display = "block"
+    document.getElementById("event-info-container").children[2].style.display = "none"
+    document.getElementById("event-info-container").children[3].style.display = "none"
 });
 
 document.getElementById("3").addEventListener("click", () => {
@@ -261,6 +340,10 @@ document.getElementById("3").addEventListener("click", () => {
     document.getElementById("4").setAttribute('data-selected', 'false')
     Toggle();
     Toggle();
+    document.getElementById("event-info-container").children[0].style.display = "none"
+    document.getElementById("event-info-container").children[1].style.display = "none"
+    document.getElementById("event-info-container").children[2].style.display = "block"
+    document.getElementById("event-info-container").children[3].style.display = "none"
 });
 
 document.getElementById("4").addEventListener("click", () => {
@@ -270,6 +353,10 @@ document.getElementById("4").addEventListener("click", () => {
     document.getElementById("4").setAttribute('data-selected', 'true')
     Toggle();
     Toggle();
+    document.getElementById("event-info-container").children[0].style.display = "none"
+    document.getElementById("event-info-container").children[1].style.display = "none"
+    document.getElementById("event-info-container").children[2].style.display = "none"
+    document.getElementById("event-info-container").children[3].style.display = "block"
 });
 
 
