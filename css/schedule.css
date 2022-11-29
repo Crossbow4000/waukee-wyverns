@@ -64,6 +64,7 @@ img {
     padding-inline: 14px;
     padding-block: 5px;
     transition: 200ms ease-in-out;
+    cursor: pointer;
 }
 
 .event-selection-number[data-selected=false] {

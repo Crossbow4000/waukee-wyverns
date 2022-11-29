@@ -296,7 +296,8 @@ function Reload() {
                 document.getElementById("3").style.display = "none"
                 document.getElementById("4").style.display = "none"
             }
-
+            Toggle();
+            Toggle();
         });
 }
 
