@@ -116,6 +116,43 @@ svg:hover rect{
     user-select: none;
 }
 
+.loading-container {
+    background: royalblue;
+    margin-inline: -8px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
+    margin-block: 2rem;
+}
+
+.loading-container h1 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.loading-icon-container {
+    background: white;
+    padding-inline: 40px;
+    padding-block: 38.3px;
+    margin: 40px;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 40px rgba(32, 41, 126, 0.8);
+    transition: 200ms ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-icon-container img {
+    animation-name: rotate;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
 @media (max-width: 48rem) {
   .menu-bar .navigation {
     position: fixed;

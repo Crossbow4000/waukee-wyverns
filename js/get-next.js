@@ -4,6 +4,8 @@ const api_url = 'https://script.googleusercontent.com/macros/echo?user_content_k
 
 let node
 
+let loading = document.getElementById('loading');
+
 let events = 0;
 let maxEvents = 2;
 
@@ -72,6 +74,7 @@ function DestroyEvents() {
 fetch(api_url)
   .then((response) => response.json())
   .then(json => {
+    loading.style.display = 'block'
     for (let i = 0; i <= 4; i++) {
         if ( days[json[i].Day] >= day_map[d] ) {
 
@@ -186,5 +189,6 @@ fetch(api_url)
     }
     Toggle()
     Toggle()
+    loading.style.display = 'none'
   });
 
